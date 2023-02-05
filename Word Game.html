@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<style>
+	button {
+            width: 100%;
+            padding: 10px 20px;
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+        }
+	paragraph{
+			font-size: 14px;
+	}
+	</style>
+	<script>
+	var temp;
+	function wordAdd(x)
+	{
+		temp += x;
+	}
+	function word()
+	{
+		const words = ["SPEEL", "PELES", "PEELS", "ELSE", "EELS", "SEEP", "SEEL", "PELE", "PEES", "PEEL", "LEES", "ELS", "SEL", "LEE", "SEE", "PES", "PEE", "EEL", "EL", "PE", "ES"];
+		if(words.includes(temp) == true)
+		{
+			var p = document.createElement("p");
+			p.style.textAlign = "center";
+			var text = document.createTextNode(temp);
+			p.appendChild(text);
+			document.body.appendChild(p);
+			temp = ""
+		}
+		else
+		{
+			alert("This is not a word contained in SLEEP")
+			temp = ""
+		}
+	}
+	</script>
+	</head>
+	<center>
+	<body>
+	<table>
+	<tr>
+	<td><button name="S" id="S" onclick="javascript:wordAdd('S')">S</button></td>
+	<td><button name="L" id="L" onclick="javascript:wordAdd('L')">L</button></td>
+	<td><button name="E" id="E" onclick="javascript:wordAdd('E')">E</button></td>
+	<td><button name="E2" id="E2" onclick="javascript:wordAdd('E')">E</button></td>
+	<td><button name="P" id="P" onclick="javascript:wordAdd('P')">P</button></td>
+	</tr>
+	<tr>
+	<td align="center" colspan="7"><button name="Word" id="Word" onclick="javascript:word()">Click to Form Word</button></td>
+	</tr>
+	</table>
+	<p id="p"></p>
+	</body>
+	<center>
+</html>

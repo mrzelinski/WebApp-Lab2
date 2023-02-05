@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<style>
+	table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+	button {
+            width: 100%;
+            padding: 20px 40px;
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            padding: 20px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+	</style>
+	<script>
+	function evaluate()
+	{
+		document.getElementById("answer").value = eval(document.getElementById("answer").value)
+	}
+	function display(x)
+	{
+		if(x == '=')
+		{
+			evaluate();
+		}
+		else{
+			document.getElementById("answer").value += x;
+		}
+	}
+	function clean()
+	{
+		document.getElementById("answer").value = "";
+	}
+	</script>
+	</head>
+	<body>
+	<center>
+	<table>
+	<tr>
+	<td colspan="4"><input type="text" name="answer" id="answer" /></td>
+	</tr>
+	<tr>
+	<td><button name="1" id="1" onclick="javascript:display('1')">1</button></td>
+	<td><button name="2" id="2" onclick="javascript:display('2')">2</button></td>
+	<td><button name="3" id="3" onclick="javascript:display('3')">3</button></td>
+	<td><button name="+" id="+" onclick="javascript:display('+')">+</button></td>
+	</tr>
+	<tr>
+	<td><button name="4" id="4" onclick="javascript:display('4')">4</button></td>
+	<td><button name="5" id="5" onclick="javascript:display('5')">5</button></td>
+	<td><button name="6" id="6" onclick="javascript:display('6')">6</button></td>
+	<td><button name="-" id="-" onclick="javascript:display('-')">-</button></td>
+	</tr>
+	<tr>
+	<td><button name="7" id="7" onclick="javascript:display('7')">7</button></td>
+	<td><button name="8" id="8" onclick="javascript:display('8')">8</button></td>
+	<td><button name="9" id="9" onclick="javascript:display('9')">9</button></td>
+	<td><button name="*" id="*" onclick="javascript:display('*')">*</button></td>
+	</tr>
+	<tr>
+	<td><button name="clear" id="clear" onclick="javascript:clean()">C</button></td>
+	<td><button name="0" id="0" onclick="javascript:display('0')">0</button></td>
+	<td><button name="=" id="=" onclick="javascript:display('=')">=</button></td>
+	<td><button name="/" id="/" onclick="javascript:display('/')">/</button></td>
+	</tr>
+	</table>
+	</center>
+	</body>
+</html>
